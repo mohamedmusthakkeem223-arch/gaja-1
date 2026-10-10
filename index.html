@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gokul S | Engineering Student Portfolio</title>
+<meta name="description" content="Portfolio of Gokul S, second-year EEE (VLSI) student exploring Java, digital electronics and semiconductor technology.">
+<meta property="og:title" content="Gokul S | Engineering Student Portfolio">
+<meta property="og:description" content="Java learner and VLSI enthusiast from Tamil Nadu.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23123F73'/><text x='32' y='42' font-size='28' font-weight='700' text-anchor='middle' fill='white' font-family='Arial'>GS</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#123F73;--blue:#245A96;--bg:#fff;--light:#F4F7FB;--text:#18263B;--muted:#64748B;--border:#D9E3F0;--purple:#8B7FE8;--card:#fff}
+[data-theme=dark]{--bg:#0d1726;--light:#142238;--text:#E6EDF7;--muted:#9FB0C6;--border:#243652;--card:#182943;--navy:#7FB0EA;--blue:#9CC4F2}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Manrope,Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;color:var(--navy);margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:32px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:28px;padding:24px;box-shadow:0 6px 24px rgba(18,63,115,.07);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(18,63,115,.14)}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:700;border:2px solid var(--navy);cursor:pointer;font:inherit;font-weight:700;transition:.2s}
+.btn.p{background:var(--navy);color:#fff}[data-theme=dark] .btn.p{color:#0d1726}
+.btn.s{background:transparent;color:var(--navy)}
+.btn:hover{transform:translateY(-2px)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;font-size:1.3rem;color:var(--navy)}
+.links{display:flex;gap:6px;align-items:center}
+.links a{padding:8px 12px;border-radius:999px;font-size:.92rem;font-weight:600;color:var(--muted)}
+.links a.active,.links a:hover{color:var(--navy);background:var(--light)}
+.icon{background:none;border:1px solid var(--border);border-radius:50%;width:40px;height:40px;cursor:pointer;color:var(--text);font-size:1.1rem}
+#burger{display:none}
+@media(max-width:900px){#burger{display:block}.links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;padding:16px;border-bottom:1px solid var(--border)}.links.open{display:flex}}
+/* hero bento */
+.shell{background:var(--light);border:1px solid var(--border);border-radius:36px;padding:24px;margin-top:28px}
+.bento{display:grid;gap:18px;grid-template-columns:280px 1fr 1fr 1fr;grid-template-areas:"me title title title" "me feat feat st" "me cta sk st2"}
+.me{grid-area:me;background:var(--purple);color:#fff;border-radius:28px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.me small{opacity:.85;font-weight:600}
+.photo{width:100%;aspect-ratio:1;border-radius:24px;background:#fff3;display:grid;place-items:center;overflow:hidden;font-size:4rem;font-weight:800}
+.photo img{width:100%;height:100%;object-fit:cover}
+.me h1{font-size:2.1rem;line-height:1.1;font-weight:800}
+.tag{display:inline-block;background:#fff;color:#123F73;border-radius:999px;padding:6px 14px;font-size:.8rem;font-weight:800;width:fit-content}
+.title{grid-area:title;font-size:clamp(3rem,9vw,6.5rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--text);padding:0 6px}
+.title sup{font-size:.3em;color:var(--blue)}
+.feat{grid-area:feat;background:linear-gradient(135deg,#123F73,#245A96);color:#fff;border-radius:28px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;min-height:200px}
+.feat p{opacity:.9;margin:8px 0 16px}
+.feat .btn{border-color:#fff;color:#fff;width:fit-content}
+.stat{border-radius:28px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;min-height:150px}
+.stat b{font-size:2.8rem;line-height:1;font-weight:800}
+.st{grid-area:st;background:var(--purple);color:#fff}
+.st2{grid-area:st2;background:#FFC857;color:#18263B}
+.cta{grid-area:cta;background:#18263B;color:#fff}
+.sk{grid-area:sk;background:var(--card);border:1px solid var(--border)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{background:var(--light);color:var(--navy);padding:5px 12px;border-radius:999px;font-size:.8rem;font-weight:700}
+.social{display:flex;gap:10px;flex-wrap:wrap}
+.social a{font-size:.85rem;font-weight:700;background:#fff3;border-radius:999px;padding:5px 12px}
+@media(max-width:900px){.bento{grid-template-columns:1fr 1fr;grid-template-areas:"me me" "title title" "feat feat" "st st2" "cta sk"}.me{flex-direction:row;flex-wrap:wrap}.photo{width:140px}}
+@media(max-width:560px){.bento{grid-template-columns:1fr;grid-template-areas:"me" "title" "feat" "st" "st2" "cta" "sk"}.photo{width:100%}}
+/* misc */
+.badge{font-size:.75rem;font-weight:800;padding:4px 12px;border-radius:999px;background:var(--light);color:var(--navy);border:1px solid var(--border)}
+.badge.done{background:#DDF4E4;color:#1B6B3A;border-color:#BFE5CC}
+.filters{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.filters button{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:8px 18px;font:inherit;font-weight:700;cursor:pointer}
+.filters button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+[data-theme=dark] .filters button.on{color:#0d1726}
+.card h3{color:var(--navy);margin-bottom:6px}
+.card p{color:var(--muted);font-size:.95rem}
+.pill{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px}
+.step{border-left:4px solid var(--blue)}
+.step span{font-weight:800;color:var(--blue);font-size:.8rem;letter-spacing:.08em}
+form{display:grid;gap:14px}
+input,textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:14px;font:inherit;background:var(--bg);color:var(--text)}
+.err{color:#C0392B;font-size:.8rem;min-height:1em}
+#msg{font-weight:700;margin-top:6px}
+footer{background:var(--navy);color:#fff;padding:36px 0;margin-top:40px}
+[data-theme=dark] footer{background:#0a111d}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer a{margin-right:14px;opacity:.9}
+.reveal{opacity:0;transform:translateY(20px);transition:.6s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#18263B;color:#fff;padding:12px 20px;border-radius:12px;display:none;z-index:99}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav">
+  <a href="#home" class="logo">Gokul S</a>
+  <div class="links" id="links">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#certs">Certifications</a><a href="#contact">Contact</a>
+    <a href="resume.pdf" class="btn p" id="resume" download>Download Resume</a>
+  </div>
+  <div style="display:flex;gap:8px"><button class="icon" id="theme" aria-label="Toggle dark mode">☾</button><button class="icon" id="burger" aria-label="Open menu" aria-expanded="false">☰</button></div>
+</div></nav>
+
+<main>
+<section id="home" style="padding-top:0"><div class="wrap"><div class="shell"><div class="bento">
+  <div class="me">
+    <small>◆ About Me</small>
+    <div class="photo"><img src="images/gokul-profile.jpg" alt="Portrait of Gokul S" onerror="this.remove();this.parentNode.textContent='GS'"></div>
+    <h1>I'm,<br>Gokul S</h1>
+    <span class="tag">Open to Learning Opportunities</span>
+    <div class="social"><a href="mailto:gokulsivasakthi036@gmail.com">Email</a><a href="#" data-link="linkedin">LinkedIn</a><a href="#" data-link="github">GitHub</a></div>
+  </div>
+  <div class="title">Portfolio<sup>↗</sup></div>
+  <div class="feat">
+    <div><small>WELCOME TO MY PORTFOLIO</small><h2 style="color:#fff;margin-top:6px">Engineering Student | Java Learner | VLSI Enthusiast</h2>
+    <p>Second-year student exploring software development and VLSI technology through programming, technical learning and projects.</p></div>
+    <a class="btn" href="#projects">Explore My Projects</a>
+  </div>
+  <div class="stat st"><span>Certificates earned</span><b>2</b></div>
+  <div class="stat st2"><span>Learning projects in progress</span><b>3</b></div>
+  <a class="stat cta" href="#contact"><span>Let's connect</span><b style="font-size:1.6rem">Contact Me →</b></a>
+  <div class="stat sk card" style="padding:22px"><b style="font-size:1.1rem;color:var(--navy)">Currently Learning</b><div class="chips"><span class="chip">Java</span><span class="chip">OOP</span><span class="chip">Digital Electronics</span></div></div>
+</div></div></div></section>
+
+<section id="about"><div class="wrap reveal">
+  <h2>About Me</h2><p class="sub" style="max-width:760px">I am a second-year engineering student interested in the intersection of software development and electronics technology. I am developing my Java programming skills while exploring VLSI design and semiconductor systems. My goal is to strengthen my technical foundation, work on practical projects, earn relevant certifications, and prepare for future internship and placement opportunities.</p>
+  <div class="grid g3">
+    <div class="card"><h3>💻 Software Development</h3><p>Java and programming fundamentals.</p></div>
+    <div class="card"><h3>🔌 Electronics &amp; VLSI</h3><p>Semiconductor concepts and digital electronics.</p></div>
+    <div class="card"><h3>📚 Continuous Learning</h3><p>Practical projects, online certifications and technical skill development.</p></div>
+  </div>
+  <div class="card" style="margin-top:20px"><h3>My Career Goal</h3><p>I am interested in both core engineering opportunities (electronics, VLSI, semiconductors) and software-related roles such as Java development.</p></div>
+</div></section>
+
+<section id="skills" style="background:var(--light)"><div class="wrap reveal">
+  <h2>Technical Skills</h2><p class="sub">Grouped by area and learning stage, with no made-up ratings.</p>
+  <div class="grid g3">
+    <div class="card"><h3>Programming</h3><div class="chips"><span class="chip">Java</span><span class="chip">OOP · Learning</span><span class="chip">DSA · Goal</span></div></div>
+    <div class="card"><h3>Core Engineering</h3><div class="chips"><span class="chip">VLSI Design · Learning</span><span class="chip">Digital Electronics · Learning</span><span class="chip">Semiconductors · Learning</span></div></div>
+    <div class="card"><h3>Tools</h3><div class="chips"><span class="chip">Visual Studio Code</span></div><p style="margin-top:10px">Git/GitHub, Verilog HDL and EDA tools will be added once I start using them.</p></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap reveal">
+  <h2>Projects</h2><p class="sub">Proposed and in-progress work is labelled honestly.</p>
+  <div class="filters" role="group" aria-label="Filter projects"><button class="on" data-f="all">All</button><button data-f="software">Software</button><button data-f="core">Core Engineering</button></div>
+  <div class="grid g3" id="plist">
+    <article class="card" data-c="software"><div class="pill"><h3>Java Programming Projects</h3><span class="badge">In Progress</span></div><p>Small Java programs to practise programming logic, object-oriented programming and problem-solving.</p><div class="chips"><span class="chip">Java</span></div><p style="margin-top:10px"><b>Role:</b> Learner and developer.</p></article>
+    <article class="card" data-c="software"><div class="pill"><h3>Sign Language to Text System</h3><span class="badge">Planning</span></div><p>A concept exploring camera-based hand gesture recognition and conversion of gestures into text. Not yet implemented.</p><div class="chips"><span class="chip">Tech to be decided</span></div></article>
+    <article class="card" data-c="core"><div class="pill"><h3>VLSI &amp; Digital Electronics Exercises</h3><span class="badge">In Progress</span></div><p>Practical learning exercises on digital logic, circuits and hardware description languages.</p><div class="chips"><span class="chip">Tools added when used</span></div></article>
+  </div>
+  <!-- To add a project: copy an <article> above, edit the text, and set data-c="software" or "core". Add a GitHub button only when the repo exists. -->
+</div></section>
+
+<section id="education" style="background:var(--light)"><div class="wrap reveal">
+  <h2>Education</h2>
+  <div class="card" style="max-width:640px"><div class="pill"><h3>B.E. Electrical and Electronics Engineering (VLSI)</h3><span class="badge">Second Year</span></div><p>Tamil Nadu, India</p>
+  <!-- Add later: college name, graduation year, CGPA, coursework, achievements -->
+  </div>
+</div></section>
+
+<section id="certs"><div class="wrap reveal">
+  <h2>Certifications</h2><p class="sub">Only genuine certificates are marked completed.</p>
+  <div class="grid g3">
+    <div class="card"><div class="pill"><h3>Bano Job Ready</h3><span class="badge done">Completed</span></div><p>Add issuer, date and credential link.</p></div>
+    <div class="card"><div class="pill"><h3>Communication Skills</h3><span class="badge done">Completed</span></div><p>Add issuer, date and credential link.</p></div>
+    <div class="card"><div class="pill"><h3>Java Programming</h3><span class="badge">Planned</span></div></div>
+    <div class="card"><div class="pill"><h3>Object-Oriented Programming</h3><span class="badge">Planned</span></div></div>
+    <div class="card"><div class="pill"><h3>VLSI Design</h3><span class="badge">Planned</span></div></div>
+    <div class="card"><div class="pill"><h3>Digital Electronics</h3><span class="badge">Planned</span></div></div>
+    <div class="card"><div class="pill"><h3>Semiconductor Fundamentals</h3><span class="badge">Planned</span></div></div>
+  </div>
+</div></section>
+
+<section id="journey" style="background:var(--light)"><div class="wrap reveal">
+  <h2>My Learning Journey</h2><p class="sub">A future roadmap, not a list of finished achievements.</p>
+  <div class="grid g3">
+    <div class="card step"><span>STAGE 1</span><h3>Programming Foundations</h3><p>Strengthen Java syntax, OOP, problem-solving and debugging.</p></div>
+    <div class="card step"><span>STAGE 2</span><h3>Practical Projects</h3><p>Build and document small Java applications and engineering projects.</p></div>
+    <div class="card step"><span>STAGE 3</span><h3>Core Engineering Skills</h3><p>Learn digital electronics, semiconductor fundamentals and introductory VLSI.</p></div>
+    <div class="card step"><span>STAGE 4</span><h3>Career Preparation</h3><p>Complete free courses, publish projects on GitHub, improve my resume and prepare for placements.</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap reveal">
+  <h2>Contact</h2><p class="sub">Email: <a href="mailto:gokulsivasakthi036@gmail.com"><b>gokulsivasakthi036@gmail.com</b></a> · Phone: 9843037334 · Karur, Tamil Nadu, India</p>
+  <div class="grid g3" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+    <div class="card"><h3>Find me online</h3><p><a href="#" data-link="linkedin"><b>LinkedIn</b></a> · <a href="#" data-link="github"><b>GitHub</b></a></p><p style="margin-top:8px">Profile links are placeholders until you add your URLs in the script at the bottom of this file.</p></div>
+    <form class="card" id="form" novalidate>
+      <div><input id="n" placeholder="Name" aria-label="Name"><div class="err"></div></div>
+      <div><input id="e" type="email" placeholder="Email" aria-label="Email"><div class="err"></div></div>
+      <div><input id="s" placeholder="Subject" aria-label="Subject"><div class="err"></div></div>
+      <div><textarea id="m" rows="4" placeholder="Message" aria-label="Message"></textarea><div class="err"></div></div>
+      <button class="btn p" type="submit">Send Message</button>
+      <div id="msg" role="status"></div>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div>Designed and developed by Gokul S. © <span id="yr"></span></div>
+  <div><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a href="#" data-link="linkedin">LinkedIn</a><a href="#" data-link="github">GitHub</a></div>
+  <a href="#home" class="btn s" style="color:#fff;border-color:#fff">↑ Back to Top</a>
+</div></footer>
+<div id="toast" role="alert"></div>
+
+<script>
+// ===== EDIT THESE =====
+const LINKS={linkedin:"",github:""}; // e.g. "https://www.linkedin.com/in/your-id"
+// ======================
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const toast=t=>{const x=$("#toast");x.textContent=t;x.style.display="block";setTimeout(()=>x.style.display="none",3500)};
+$("#yr").textContent=new Date().getFullYear();
+// social links
+$$("[data-link]").forEach(a=>{const u=LINKS[a.dataset.link];if(u){a.href=u;a.target="_blank";a.rel="noopener"}else a.addEventListener("click",e=>{e.preventDefault();toast("Add your "+a.dataset.link+" URL in the script (LINKS).")})});
+// menu
+$("#burger").onclick=()=>{const o=$("#links").classList.toggle("open");$("#burger").setAttribute("aria-expanded",o)};
+$$("#links a").forEach(a=>a.addEventListener("click",()=>$("#links").classList.remove("open")));
+// theme
+const root=document.documentElement;
+$("#theme").onclick=()=>{const d=root.dataset.theme==="dark";root.dataset.theme=d?"":"dark";$("#theme").textContent=d?"☾":"☀"};
+// resume
+$("#resume").addEventListener("click",async e=>{try{const r=await fetch("resume.pdf",{method:"HEAD"});if(!r.ok)throw 0}catch{e.preventDefault();toast("Resume not added yet. Place resume.pdf next to index.html.")}});
+// filter
+$$(".filters button").forEach(b=>b.onclick=()=>{$$(".filters button").forEach(x=>x.classList.remove("on"));b.classList.add("on");$$("#plist article").forEach(c=>c.style.display=(b.dataset.f==="all"||c.dataset.c===b.dataset.f)?"":"none")});
+// reveal + active nav
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("in")),{threshold:.1});
+$$(".reveal").forEach(el=>io.observe(el));
+const secs=$$("main section"),nav=$$("#links a:not(.btn)");
+addEventListener("scroll",()=>{let id="home";secs.forEach(s=>{if(scrollY>=s.offsetTop-120)id=s.id});nav.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+id||(id==="journey"&&a.getAttribute("href")==="#certs")))},{passive:true});
+// form
+$("#form").addEventListener("submit",e=>{e.preventDefault();
+ const f={n:$("#n"),e:$("#e"),s:$("#s"),m:$("#m")};let ok=true;
+ const set=(el,t)=>{el.nextElementSibling.textContent=t;if(t)ok=false};
+ set(f.n,f.n.value.trim()?"":"Please enter your name.");
+ set(f.e,/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.e.value)?"":"Enter a valid email.");
+ set(f.s,f.s.value.trim()?"":"Please enter a subject.");
+ set(f.m,f.m.value.trim().length>=10?"":"Message needs at least 10 characters.");
+ const msg=$("#msg");
+ if(!ok){msg.style.color="#C0392B";msg.textContent="Please fix the errors above.";return}
+ const body=encodeURIComponent(f.m.value+"\n\nFrom: "+f.n.value+" ("+f.e.value+")");
+ location.href="mailto:gokulsivasakthi036@gmail.com?subject="+encodeURIComponent(f.s.value)+"&body="+body;
+ msg.style.color="#1B6B3A";msg.textContent="Your email app should open. The message is only sent once you press Send there.";
+});
+</script>
+</body>
+</html>
